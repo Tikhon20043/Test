@@ -1,0 +1,20 @@
+def triangle_type_by_angles(angle1, angle2, angle3):
+    if angle1 + angle2 + angle3 != 180:
+        return "Углы не образуют треугольник"
+    
+    if angle1 < 90 and angle2 < 90 and angle3 < 90:
+        return "Остроугольный треугольник"
+    elif angle1 == 90 or angle2 == 90 or angle3 == 90:
+        return "Прямоугольный треугольник"
+    else:
+        return "Тупоугольный треугольник"
+
+try:
+    angle1 = float(input("Введите первый угол (в градусах): "))
+    angle2 = float(input("Введите второй угол (в градусах): "))
+    angle3 = float(input("Введите третий угол (в градусах): "))
+    
+    result = triangle_type_by_angles(angle1, angle2, angle3)
+    print(result)
+except ValueError:
+    print("Пожалуйста, введите корректные числа.")
